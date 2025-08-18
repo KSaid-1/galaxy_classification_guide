@@ -131,6 +131,7 @@ This step mirrors Step 1, but targets the full photometric catalogue. Because th
 
 - Open a new CasJobs query window and use the query in `input/queries/DATA7901_DR19_casjobs_photo.sql`. To limit output for testing, adapt the select to `TOP (100)` (see comments inside the SQL file for guidance).
 - Run the query. Export the result to CSV and examine columns to confirm they match expectations. Only after you are confident, consider exporting the full photometric catalogue; be mindful this can be a very large file (GB‑scale), so plan storage and bandwidth accordingly.
+ - Note: When exporting the full photometric dataset, you may exceed the default **CasJobs quota** (typically **500 MB** for `MyDB`). If the job fails due to size, request a quota increase in CasJobs before re‑running.
 
 ### Step 6 — Download and visualise spectra (optional)
 - The notebook includes a cell to download the first N spectra using `plate`, `mjd`, and `fiberid` into `input/spectra/`.
@@ -143,6 +144,7 @@ As with the photometric sample, begin with a small spectroscopic extract to vali
 
 - Open a new CasJobs query window and use the query in `input/queries/DATA7901_DR19_casjobs_spectra.sql`. To keep the output manageable for testing, adapt the select to `TOP (100)` (see notes in the SQL file).
 - Run the query. Export to CSV and inspect. If/when you decide to export the full spectroscopic set, note that files will be large; plan storage and versioning appropriately.
+ - Note: Exporting the full spectroscopic dataset can also exceed the default **CasJobs quota** (about **500 MB**). If you hit quota errors, request a quota increase in CasJobs and try again.
 
 
 ### Troubleshooting
